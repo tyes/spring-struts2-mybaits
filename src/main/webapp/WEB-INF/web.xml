@@ -1,0 +1,88 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<web-app version="2.5" xmlns="http://java.sun.com/xml/ns/javaee"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://java.sun.com/xml/ns/javaee 
+	http://java.sun.com/xml/ns/javaee/web-app_2_5.xsd">
+
+	<display-name>spring-struts2-mybatis</display-name>
+
+	<!-- Spring加载 Log4j配置 -->
+	<context-param>
+		<param-name>log4jConfigLocation</param-name>
+		<param-value>/WEB-INF/classes/log4j.xml</param-value>
+	</context-param>
+
+	<context-param>
+		<param-name>log4jRefreshInterval</param-name>
+		<param-value>60000</param-value>
+	</context-param>
+
+	<listener>
+		<listener-class>org.springframework.web.util.Log4jConfigListener</listener-class>
+	</listener>
+	
+	<!--spring配置 -->
+	<context-param>
+		<param-name>contextConfigLocation</param-name>
+		<param-value>/WEB-INF/classes/applicationContext.xml</param-value>
+	</context-param>
+	<listener>
+		<listener-class>org.springframework.web.context.ContextLoaderListener</listener-class>
+	</listener>
+
+	
+    <!-- 配置Spring核心控制器 -->  
+    <servlet>  
+        <servlet-name>web</servlet-name>  
+        <servlet-class>org.springframework.web.servlet.DispatcherServlet</servlet-class>  
+        <!-- 不指定 <init-param> 会自动找web.xml相同路径下 web-servlet.xml文件 -->  
+        <!--    -->  
+        <init-param>   
+            <param-name>contextConfigLocation</param-name>   
+            <param-value>/WEB-INF/classes/web-servlet.xml.xml</param-value>   
+        </init-param>   
+           
+        <load-on-startup>1</load-on-startup>  
+    </servlet>  
+    <servlet-mapping>  
+        <servlet-name>web</servlet-name>  
+        <url-pattern>*.do</url-pattern>  
+    </servlet-mapping>  
+    <servlet-mapping>  
+        <servlet-name>web</servlet-name>  
+        <url-pattern>*.action</url-pattern>  
+    </servlet-mapping>  
+  
+
+	<!-- 编码配置 -->
+	<filter>
+		<filter-name>encodingFilter</filter-name>
+		<filter-class>org.springframework.web.filter.CharacterEncodingFilter</filter-class>
+		<init-param>
+			<param-name>encoding</param-name>
+			<param-value>UTF-8</param-value>
+		</init-param>
+	</filter>
+	<filter-mapping>
+		<filter-name>encodingFilter</filter-name>
+		<url-pattern>/*</url-pattern>
+	</filter-mapping>
+	<!-- 自定义JSTL时间格式化 <jsp-config> <taglib> <taglib-uri>/tags</taglib-uri> <taglib-location>/WEB-INF/datetag.tld</taglib-location> 
+		</taglib> </jsp-config> -->
+	<!-- 系统相关filter设置 <filter> <filter-name>cidUrlFilter</filter-name> <filter-class>com.easou.novelweb.filter.CidUrlFilter</filter-class> 
+		</filter> <filter-mapping> <filter-name>cidUrlFilter</filter-name> <url-pattern>/api/bookapp/*.m</url-pattern> 
+		</filter-mapping> -->
+	<!-- 错误页面配置 -->
+	<welcome-file-list>
+		<welcome-file>/c/index.jsp</welcome-file>
+	</welcome-file-list>
+
+	<!-- <welcome-file-list> <welcome-file>/indexWeb.m</welcome-file> </welcome-file-list> 
+		<error-page> <error-code>500</error-code> <location>/indexWeb.m</location> 
+		</error-page> <error-page> <error-code>404</error-code> <location>/indexWeb.m</location> 
+		</error-page> <error-page> <error-code>403</error-code> <location>/indexWeb.m</location> 
+		</error-page> <error-page> <error-code>401</error-code> <location>/indexWeb.m</location> 
+		</error-page> -->
+
+
+</web-app>

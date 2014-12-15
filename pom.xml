@@ -16,7 +16,7 @@
 		<mysql.version>5.1.29</mysql.version>
 		<mongodb.version>2.12.0</mongodb.version>
 		<ojdbc14.version>10.2.0.4.0</ojdbc14.version>
-		<servlet-api.version>2.5</servlet-api.version>
+		<servlet-api.version>3.1.0</servlet-api.version>
 		<jsp-api.version>2.2</jsp-api.version>
 		<jstl.version>1.2</jstl.version>
 		<fastjson.version>1.1.39</fastjson.version>
@@ -144,13 +144,13 @@
 			<artifactId>spring-test</artifactId>
 			<version>${spring.version}</version>
 		</dependency>
-		<!-- spring mongondb -->
+		<!-- spring mongondb
 		<dependency>
 			<groupId>org.springframework.data</groupId>
 			<artifactId>spring-data-mongodb</artifactId>
 			<version>1.4.2.RELEASE</version>
 		</dependency>
-
+		 -->
 		<!-- 模板库 -->
 		<dependency>
 			<groupId>org.freemarker</groupId>
@@ -186,7 +186,7 @@
 		</dependency>
 		<dependency>
 			<groupId>javax.servlet</groupId>
-			<artifactId>servlet-api</artifactId>
+			<artifactId>javax.servlet-api</artifactId>
 			<version>${servlet-api.version}</version>
 		</dependency>
 		<dependency>
@@ -211,9 +211,9 @@
 			<version>${druid.version}</version>
 		</dependency>
 		<dependency>
-			<groupId>com.alibaba</groupId>
-			<artifactId>druid</artifactId>
-			<version>${druid.version}</version>
+			<groupId>com.jolbox</groupId>
+			<artifactId>bonecp</artifactId>
+			<version>${bonecp.version}</version>
 		</dependency>
 		<!-- shiro权限控制 
 		<dependency>
