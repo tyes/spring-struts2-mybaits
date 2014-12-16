@@ -23,7 +23,7 @@
 		<commons-dbcp2.version>2.0</commons-dbcp2.version>
 		<commons-pool2.version>2.2</commons-pool2.version>
 		<commons-logging.version>1.1.3</commons-logging.version>
-		<commons-io.version>1.3.2</commons-io.version>
+		<commons-io.version>2.4</commons-io.version>
 		<commons-lang3.version>3.3.1</commons-lang3.version>
 		<commons-fileupload.version>1.2.1</commons-fileupload.version>
 		<log4j.version>1.2.17</log4j.version>
@@ -45,7 +45,7 @@
 		<guava.version>13.0.1</guava.version>
 		<!-- Plugin的属性定义 -->
 		<project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
-		<jdk.version>1.7</jdk.version>
+		<jdk.version>1.8</jdk.version>
 	</properties>
 	<dependencies>
 		<!-- mongodb 
@@ -126,11 +126,6 @@
 		<dependency>
 			<groupId>org.springframework</groupId>
 			<artifactId>spring-context-support</artifactId>
-			<version>${spring.version}</version>
-		</dependency>
-		<dependency>
-			<groupId>org.springframework</groupId>
-			<artifactId>spring-test</artifactId>
 			<version>${spring.version}</version>
 		</dependency>
 		<dependency>
@@ -247,12 +242,6 @@
 			<version>${shiro.version}</version>
 		</dependency>
 		-->
-		<!-- 模板技术 -->
-		<dependency>
-			<groupId>org.freemarker</groupId>
-			<artifactId>freemarker</artifactId>
-			<version>${freemarker.version}</version>
-		</dependency>
 		<dependency>
 			<groupId>org.apache.velocity</groupId>
 			<artifactId>velocity</artifactId>
@@ -260,7 +249,7 @@
 		</dependency>
 		<!-- 依赖的公共类库 -->
 		<dependency>
-			<groupId>org.apache.commons</groupId>
+			<groupId>commons-io</groupId>
 			<artifactId>commons-io</artifactId>
 			<version>${commons-io.version}</version>
 		</dependency>
