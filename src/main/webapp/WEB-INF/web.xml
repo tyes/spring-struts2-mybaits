@@ -30,7 +30,6 @@
 		<listener-class>org.springframework.web.context.ContextLoaderListener</listener-class>
 	</listener>
 
-	
     <!-- 配置Spring核心控制器 -->  
     <servlet>  
         <servlet-name>web</servlet-name>  
@@ -39,7 +38,7 @@
         <!--    -->  
         <init-param>   
             <param-name>contextConfigLocation</param-name>   
-            <param-value>/WEB-INF/classes/web-servlet.xml.xml</param-value>   
+            <param-value>/WEB-INF/classes/web-servlet.xml</param-value>   
         </init-param>   
            
         <load-on-startup>1</load-on-startup>  
@@ -74,7 +73,7 @@
 		</filter-mapping> -->
 	<!-- 错误页面配置 -->
 	<welcome-file-list>
-		<welcome-file>/c/index.jsp</welcome-file>
+		<welcome-file>/index.jsp</welcome-file>
 	</welcome-file-list>
 
 	<!-- <welcome-file-list> <welcome-file>/indexWeb.m</welcome-file> </welcome-file-list> 
